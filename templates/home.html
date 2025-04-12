@@ -1,0 +1,109 @@
+
+<div class="layout">
+  <!-- Include layout elements -->
+  <div id="layout-include"></div>
+  
+  <main class="page-container py-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <div>
+        <h1 class="text-3xl font-bold text-primary mb-1">Discover Events</h1>
+        <p class="text-gray-600">Find and join events happening at LAU</p>
+      </div>
+
+      <div class="flex gap-2">
+        <button id="uploadTranscriptBtn" class="btn btn-outline">
+          <i class="fas fa-upload mr-2"></i>
+          Upload Transcript
+        </button>
+      </div>
+    </div>
+    
+    <div class="mb-8">
+      <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-4">
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            id="searchInput"
+            placeholder="Search for events..."
+            class="form-input search-input"
+          >
+        </div>
+
+        <button 
+          id="filterToggleBtn"
+          class="btn btn-outline"
+        >
+          <i class="fas fa-filter mr-2"></i>
+          Filters
+        </button>
+        
+        <button 
+          id="resetFiltersBtn"
+          class="btn btn-outline"
+          style="display: none;"
+        >
+          Clear filters
+        </button>
+      </div>
+
+      <div id="filtersPanel" class="filters hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <label class="form-label">Date</label>
+            <input 
+              type="date" 
+              id="dateInput" 
+              class="form-input"
+            >
+          </div>
+          
+          <div>
+            <label class="form-label">Organizing Club</label>
+            <div class="select-wrapper">
+              <select id="clubSelect" class="select">
+                <option value="all">All Clubs</option>
+                <!-- Options will be populated by JavaScript -->
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="eventsContainer" class="grid">
+      <!-- Event cards will be added here by JavaScript -->
+    </div>
+    
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <div class="empty-state-icon">📅</div>
+      <p class="text-xl text-gray-500 mb-4">No events found matching your criteria</p>
+      <button id="viewAllButton" class="btn btn-primary">View All Events</button>
+    </div>
+  </main>
+</div>
+
+<!-- Event card template (hidden, used by JavaScript) -->
+<template id="eventCardTemplate">
+  <div class="card card-hover event-card" data-event-id="">
+    <img class="card-image" alt="">
+    <div class="card-body">
+      <h3 class="card-title"></h3>
+      <p class="card-text"></p>
+      <div class="flex items-center gap-2 mb-2 text-sm">
+        <i class="fas fa-calendar text-primary"></i>
+        <span class="event-date"></span>
+      </div>
+      <div class="flex items-center gap-2 mb-2 text-sm">
+        <i class="fas fa-map-marker-alt text-primary"></i>
+        <span class="event-location"></span>
+      </div>
+      <div class="flex items-center justify-between mt-4">
+        <span class="badge badge-primary event-category"></span>
+        <span class="text-sm text-muted-foreground"><span class="event-spots"></span> spots left</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- Load font awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

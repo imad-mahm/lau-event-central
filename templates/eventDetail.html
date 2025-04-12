@@ -1,0 +1,76 @@
+
+<div class="layout">
+  <!-- Include layout elements -->
+  <div id="layout-include"></div>
+  
+  <main class="page-container py-6">
+    <div class="mb-6">
+      <button id="backButton" class="btn btn-outline">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to Events
+      </button>
+    </div>
+
+    <div id="eventContainer" class="event-detail-grid">
+      <!-- Event details will be populated by JavaScript -->
+    </div>
+  </main>
+</div>
+
+<!-- Event detail template (hidden, used by JavaScript) -->
+<template id="eventDetailTemplate">
+  <div class="event-main">
+    <img class="event-image mb-4" alt="">
+    <h1 class="text-3xl font-bold mb-2 event-title"></h1>
+    <p class="mb-6 event-description"></p>
+    
+    <div class="flex flex-col gap-4 mb-6">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-calendar text-primary"></i>
+        <span class="event-date"></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-clock text-primary"></i>
+        <span class="event-time"></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-primary"></i>
+        <span class="event-location"></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fas fa-users text-primary"></i>
+        <span class="event-organizer"></span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="event-sidebar">
+    <div class="card p-6">
+      <h2 class="text-xl font-bold mb-4">Registration</h2>
+      
+      <div class="mb-4">
+        <div class="mb-2">Availability:</div>
+        <div class="text-2xl font-bold">
+          <span id="spotsRemaining"></span> / <span id="capacity"></span> spots
+        </div>
+      </div>
+      
+      <button id="registerButton" class="btn btn-primary w-full mb-4">
+        Register for Event
+      </button>
+      
+      <div id="livestreamSection" style="display: none;">
+        <div class="border-t border-border my-4 pt-4">
+          <h3 class="font-bold mb-2">Livestream Available</h3>
+          <p class="text-sm mb-4">Can't attend in person? Join via livestream</p>
+          <button id="livestreamButton" class="btn btn-outline w-full">
+            Register for Livestream
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- Load font awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

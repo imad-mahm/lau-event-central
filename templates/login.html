@@ -1,0 +1,38 @@
+
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+  <div class="mb-8">
+    <img src="/images/logo-lau.png" alt="LAU Logo" class="lau-logo mb-2">
+    <h1 class="text-3xl font-bold text-center text-primary">LEMS</h1>
+    <p class="text-sm text-gray-600 text-center">LAU Event Management System</p>
+  </div>
+
+  <div class="card w-full max-w-md">
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-2">Sign In</h2>
+      <p class="text-muted-foreground mb-6">Login with your LAU credentials</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input 
+            id="email" 
+            placeholder="your.name@lau.edu" 
+            type="email"
+            class="form-input"
+            required
+          >
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input 
+            id="password" 
+            type="password"
+            class="form-input"
+            required
+          >
+        </div>
+        <button type="submit" class="btn btn-primary lau-gradient w-full">Sign In</button>
+      </form>
+    </div>
+  </div>
+</div>

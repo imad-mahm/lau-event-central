@@ -1,0 +1,66 @@
+
+<div class="layout">
+  <!-- Include layout elements -->
+  <div id="layout-include"></div>
+  
+  <main class="page-container py-8">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+      <div>
+        <h1 class="text-3xl font-bold text-primary mb-2">My Events</h1>
+        <p class="text-gray-600">Manage your registered events</p>
+      </div>
+      
+      <a href="/home" data-link class="btn btn-primary">
+        Explore More Events
+      </a>
+    </div>
+    
+    <div class="tabs mb-6">
+      <div class="flex border-b border-border">
+        <button data-tab="upcoming" class="tab-trigger py-2 px-4 font-medium border-b-2 border-primary active">Upcoming Events</button>
+        <button data-tab="past" class="tab-trigger py-2 px-4 font-medium border-b-2 border-transparent">Past Events</button>
+      </div>
+    </div>
+    
+    <div id="upcoming-content" class="tab-content">
+      <div id="upcomingEvents" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Will be populated by JavaScript -->
+      </div>
+    </div>
+    
+    <div id="past-content" class="tab-content" style="display: none;">
+      <div id="pastEvents" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Will be populated by JavaScript -->
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Event card template for my events (hidden, used by JavaScript) -->
+<template id="myEventCardTemplate">
+  <div class="card event-card">
+    <div class="flex">
+      <img class="card-image-small h-24 w-24 object-cover rounded-l" alt="">
+      <div class="p-4 flex-1">
+        <h3 class="text-lg font-semibold mb-1 event-title"></h3>
+        <div class="flex items-center gap-2 mb-1 text-sm">
+          <i class="fas fa-calendar text-primary"></i>
+          <span class="event-date"></span>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <i class="fas fa-map-marker-alt text-primary"></i>
+          <span class="event-location"></span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-border p-4">
+      <div class="flex items-center justify-between">
+        <span class="text-sm">Registration type: <span class="font-medium registration-type"></span></span>
+        <a href="#" class="event-link text-primary font-medium">View details</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- Load font awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
